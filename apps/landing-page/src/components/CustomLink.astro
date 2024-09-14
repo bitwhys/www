@@ -1,0 +1,14 @@
+---
+interface Props {
+  variant: string
+}
+
+const { variant } = Astro.props
+---
+
+<a
+  class="inline-flex w-full cursor-pointer items-center border border-primary-400/80 justify-center gap-3 rounded-lg
+    px-6 py-2 font-semibold text-secondary-500 transition-colors duration-300 hover:bg-primary-800 hover:text-white md:w-auto"
+>
+  <slot />
+</a>
