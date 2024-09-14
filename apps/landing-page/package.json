@@ -11,10 +11,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@bitwhys/tailwind": "workspace:*",
     "@astrojs/check": "^0.9.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@bitwhys/tailwind": "workspace:*",
     "astro": "^4.15.6",
+    "clsx": "^2.1.1",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.6.2"
   }
