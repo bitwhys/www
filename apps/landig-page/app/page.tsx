@@ -8,19 +8,25 @@ export default function Home() {
         <div className="col-span-6 md:col-span-4 row-span-2">
           <div className="flex h-full flex-wrap gap-4 content-center bg-neutral-300/20 sm:aspect-auto relative p-8 sm:p-12 border border-neutral-400/30 rounded-xl shadow-sm overflow-hidden ">
             <div className="content flex gap-4 flex-wrap max-w-60 sm:max-w-72 md:max-w-52 lg:max-w-64 relative z-10">
-              <h2 className="font-bold text-xl sm:text-3xl md:text-2xl mb-0">Pretty cool title...</h2>
+              <h2 className="font-bold text-xl sm:text-3xl md:text-2xl mb-0">
+                Pretty cool title...
+              </h2>
               <p>
-                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts.
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
               </p>
               <div className="inline-flex">
-                <Button link="https://github.com/christian-luntok/bent-o" className="mt-4" target="_blank">
-                  Cool Button!
+                <Button link="#" className="mt-4" target="_blank">
+                  Install extension
                 </Button>
               </div>
             </div>
             <div className="image-container absolute hidden sm:flex inset-y-0 right-0 w-full md:w-auto max-w-64 md:max-w-48 lg:max-w-60 z-10">
-              <img src="/placeholder.png" alt="Alt text" className="w-full h-auto sm:object-contain lg:object-cover" />
+              <img
+                src="/placeholder.png"
+                alt="Alt text"
+                className="w-full h-auto sm:object-contain lg:object-cover"
+              />
             </div>
             <span className="block absolute inset-y-0 left-52 sm:left-72 md:left-[200px] w-full">
               <span className="bg-gradient-to-r absolute from-[#e1e1e1] to-transparent block w-full h-full"></span>
@@ -38,7 +44,11 @@ export default function Home() {
                 <p>..or is it?</p>
               </div>
               <div className="image-container absolute flex bottom-0">
-                <img src="/placeholder4.png" alt="Alt text" className="w-full aspect-auto" />
+                <img
+                  src="/placeholder4.png"
+                  alt="Alt text"
+                  className="w-full aspect-auto"
+                />
               </div>
             </div>
           </div>
@@ -77,7 +87,7 @@ export default function Home() {
             className="flex flex-wrap gap-4 content-start bg-neutral-300/20 relative py-4 px-12 border border-neutral-400/30 rounded-xl shadow-sm overflow-hidden  hover:bg-primary-800 hover:text-white transition-colors duration-300"
           >
             <div className="content w-full text-center">
-              <span className="font-bold">Works</span>
+              <span className="font-bold">Portfolio</span>
             </div>
           </Link>
         </div>
@@ -121,7 +131,10 @@ export default function Home() {
               </a>
               <div className="content grid gap-4">
                 <h2 className="font-bold text-xl mb-0">Pretty cool title...</h2>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p>
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
               </div>
             </div>
           </div>
@@ -130,8 +143,8 @@ export default function Home() {
           <div className="flex flex-wrap h-full gap-4 content-start bg-neutral-300/20 relative p-8 sm:p-12 border border-neutral-400/30 rounded-xl">
             <div className="content w-full h-full flex content-end flex-wrap">
               <span className="text-xl md:text-2xl lg:text-3xl font-bold">
-                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts...
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts...
               </span>
             </div>
           </div>

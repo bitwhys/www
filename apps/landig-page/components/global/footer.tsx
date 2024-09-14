@@ -37,10 +37,6 @@ export const Footer = () => {
                   <span className="sr-only">bent-o</span>
                 </a>
               </h1>
-              <p className="text-base">Click download to jazz it up with your style! 🚀.</p>
-              <Button link="https://github.com/christian-luntok/bent-o" className="mt-6 md:mt-8" target="_blank">
-                Download Bent-o
-              </Button>
             </div>
           </div>
         </div>
@@ -48,9 +44,9 @@ export const Footer = () => {
           <div className="wrap grid text-center relative">
             <div className="footer-credit--item flex flex-wrap justify-center ">
               <p className="my-0">
-                ©{year} bent-o. All rights reserved.{' '}
+                ©{year} Bitwhys. All rights reserved.{' '}
                 <span className="font-normal">
-                  Made by{' '}
+                  Design inspired by{' '}
                   <a
                     className="transition-colors duration-300 hover:underline hover:decoration-wavy font-bold"
                     href="https://chrstnl.com/"
