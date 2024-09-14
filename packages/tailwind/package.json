@@ -1,6 +1,35 @@
 {
   "name": "@bitwhys/tailwind",
-  "version": "0.0.2",
-  "main": "./src/theme.css",
-  "scripts": {}
+  "version": "0.0.4",
+  "main": "./css/theme.css",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "exports": {
+    "./preset": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "tailwindcss": "^3.4.11",
+    "tsup": "^8.2.4",
+    "typescript": "^5.6.2"
+  },
+  "files": [
+    "dist",
+    "css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
