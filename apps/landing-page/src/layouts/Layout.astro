@@ -27,13 +27,123 @@ const { title } = Astro.props
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+  /* Alternox (Display) */
+  @font-face {
+    font-family: 'Alternox';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/alternox/Alternox-ExtraLight.otf') format('otf');
   }
-  html {
-    font-family: system-ui, sans-serif;
+  @font-face {
+    font-family: 'Alternox';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/alternox/Alternox-Light.otf') format('otf');
+  }
+  @font-face {
+    font-family: 'Alternox';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/alternox/Alternox-Regular.otf') format('otf');
+  }
+  @font-face {
+    font-family: 'Alternox';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/alternox/Alternox-SemiBold.otf') format('otf');
+  }
+  @font-face {
+    font-family: 'Alternox';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/alternox/Alternox-Bold.otf') format('otf');
+  }
+  @font-face {
+    font-family: 'Alternox';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/alternox/Alternox-ExtraBold.otf') format('otf');
+  }
+
+  /* Cabinet Grotesk (Display) */
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 100;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Thin.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 200;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Extralight.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 300;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Light.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Medium.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Bold.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 800;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Extrabold.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 900;
+    src:
+      local('Cabinet Grotesk'),
+      url('/fonts/cabinet-grotesk/CabinetGrotesk-Black.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Guminert';
+    src:
+      url('/fonts/guminert/Guminert-Light.woff2') format('woff2-variations'),
+      url('/fonts/guminert/Guminert-Light.woff') format('woff-variations');
+    font-weight: 300 800;
+    font-style: normal;
   }
 </style>
