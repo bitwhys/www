@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import "../styles/global.css";
 ---
 
@@ -9,6 +10,8 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--visby-font" preload />
+    <Font cssVariable="--geliat-font" preload />
     <title>Astro Basics</title>
   </head>
   <body class="bg-white dark:bg-gray-900 antialiased">
