@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "./colors.css";
+
+@theme inline {
+  --color-app: var(--pagebg-main);
+}
