@@ -1,109 +1,233 @@
-@import "@radix-ui/colors/gold.css";
-@import "@radix-ui/colors/gold-alpha.css";
-@import "@radix-ui/colors/gold-dark.css";
-@import "@radix-ui/colors/gold-dark-alpha.css";
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/white-alpha.css";
+@import "./palette/mauve.css";
+@import "./palette/crimson.css";
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*           Semantic colors           */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
 
 :root {
-  /** Base Tokens **/
-  /* Contents */
-  --cnt-primary: var(--gold-12);
-  --cnt-secondary: var(--gold-11);
-  --cnt-tertiary: var(--gold-9);
-  --cnt-on-bold: #ffffff;
-
-  --cnt-accent: var(--lime-11);
-  --cnt-info: var(--sky-11);
-  /*--cnt-success: #128700;*/
-  /*--cnt-warning: #e32d00;*/
-  /*--cnt-danger: #e00018;*/
+  /* Page Backgrounds */
+  --pagebg-main: white;
+  --pagebg-alternative: var(--color-gray-1);
+  --pagebg-secondary: var(--color-gray-2);
 
   /* Backgrounds */
-  --bg-main: var(--gold-3);
-  --bg-alternative: var(--gold-4);
+  --bg-overlay: var(--black-a6);
+  --bg-panel-solid: var(--color-gray-3); /* use for plates, muted backgrounds */
+  --bg-panel-translucent: var(--color-gray-a3);
+  --bg-surface: oklch(1 0 0); /* used for 'cards' */
 
-  --bg-accent-soft: var(--lime-3);
-  --bg-info-soft: var(--sky-3);
-  /*--bg-success-soft: #e6faef;*/
-  /*--bg-warning-soft: #fff3eb;*/
-  /*--bg-danger-soft: #fff0f1;*/
-  /*--bg-danger-soft: #fff0f1;*/
+  --bg-accent-soft: var(--color-accent-3);
+  --bg-accent-bold: var(--color-accent-9);
 
-  --bg-accent-bold: var(--lime-9);
-  --bg-info-bold: var(--sky-9);
-  /*--bg-success-bold: #0c823c;*/
-  /*--bg-warning-bold: #fa5c00;*/
-  /*--bg-danger-bold: #d50017;*/
+  /* Content, Icons */
+  --cnt-primary: var(--color-gray-12);
+  --cnt-secondary: var(--color-gray-11);
+  --cnt-tertiary: var(--color-gray-9);
+  --cnt-on-bold: var(--color-white-a12);
+
+  /*--cnt-accent: var(--lime-11);*/
+  /*--cnt-info: var(--sky-11);*/
 
   /* Borders */
-  --brd-main: var(--gold-6);
-  --brd-alternative: var(--gold-7);
+  --brd-main: var(--color-gray-6);
+  --brd-alternative: var(--color-gray-7);
+  --brd-ring: var(--color-gray-8);
 
-  --brd-accent: var(--lime-8);
-  --brd-info: var(--sky-8);
+  --brd-ring-accent: var(--lime-8);
+  /*--brd-info: var(--sky-8);*/
   /*--brd-success: #128700;*/
   /*--brd-warning: #e32d00;*/
   /*--brd-danger: #e00018;*/
 
-  /* Page Backgrounds */
-  --pagebg-main: var(--gold-2);
-  --pagebg-alternative: var(--gold-1);
-
-  /* TODO -———————————————————————————————————————————- */
-
-  /** State Tokens **/
+  /** TODO: State Tokens **/
   /* Contents */
   /*--cnt-accent-hover: #7910ff;
-  --cnt-accent-pressed: #7910ff;
-  --cnt-info-hover: #0068d6;
-  --cnt-info-pressed: #0063cc;
-  --cnt-success-hover: #0c7e3a;
-  --cnt-success-pressed: #0b7938;
-  --cnt-warning-hover: #c23d00;
-  --cnt-warning-pressed: #c23d00;
-  --cnt-danger-hover: #d60017;
-  --cnt-danger-pressed: #cc0016;*/
+    --cnt-accent-pressed: #7910ff;
+    --cnt-info-hover: #0068d6;
+    --cnt-info-pressed: #0063cc;
+    --cnt-success-hover: #0c7e3a;
+    --cnt-success-pressed: #0b7938;
+    --cnt-warning-hover: #c23d00;
+    --cnt-warning-pressed: #c23d00;
+    --cnt-danger-hover: #d60017;
+    --cnt-danger-pressed: #cc0016;*/
 
   /* Backgrounds */
   /*--bg-main-hover: #f1f1f3;
-  --bg-main-pressed: #ebebed;
-  --bg-alternative-hover: #eeeef2;
-  --bg-alternative-pressed: #e5e5eb;*/
+    --bg-main-pressed: #ebebed;
+    --bg-alternative-hover: #eeeef2;
+    --bg-alternative-pressed: #e5e5eb;*/
 
   /*--bg-accent-soft-hover: #ebdbff;
-  --bg-accent-soft-pressed: #e8d6ff;
-  --bg-info-soft-hover: #e0f0ff;
-  --bg-info-soft-pressed: #d6ebff;
-  --bg-success-soft-hover: #e6faef;
-  --bg-success-soft-pressed: #e6faef;
-  --bg-warning-soft-hover: #ffede0;
-  --bg-warning-soft-pressed: #ffeadb;
-  --bg-danger-soft-hover: #ffe5e8;
-  --bg-danger-soft-pressed: #ffdbdf;*/
+    --bg-accent-soft-pressed: #e8d6ff;
+    --bg-info-soft-hover: #e0f0ff;
+    --bg-info-soft-pressed: #d6ebff;
+    --bg-success-soft-hover: #e6faef;
+    --bg-success-soft-pressed: #e6faef;
+    --bg-warning-soft-hover: #ffede0;
+    --bg-warning-soft-pressed: #ffeadb;
+    --bg-danger-soft-hover: #ffe5e8;
+    --bg-danger-soft-pressed: #ffdbdf;*/
 
   /*--bg-accent-bold-hover: #6000db;
-  --bg-accent-bold-pressed: #4c00ad;
-  --bg-info-bold-hover: #0051f5;
-  --bg-info-bold-pressed: #0047d3;
-  --bg-success-bold-hover: #0a7034;
-  --bg-success-bold-pressed: #09672f;
-  --bg-warning-bold-hover: #e55500;
-  --bg-warning-bold-pressed: #d14d00;
-  --bg-danger-bold-hover: #b80014;
-  --bg-danger-bold-pressed: #a30011;*/
+    --bg-accent-bold-pressed: #4c00ad;
+    --bg-info-bold-hover: #0051f5;
+    --bg-info-bold-pressed: #0047d3;
+    --bg-success-bold-hover: #0a7034;
+    --bg-success-bold-pressed: #09672f;
+    --bg-warning-bold-hover: #e55500;
+    --bg-warning-bold-pressed: #d14d00;
+    --bg-danger-bold-hover: #b80014;
+    --bg-danger-bold-pressed: #a30011;*/
 }
-
-.dark {
+:is(.dark, .dark-theme),
+:is(.dark, .dark-theme) :where(:not(.light, .light-theme)) {
   /* Page Backgrounds */
-  --pagebg-main: var(--gold-1);
-  --pagebg-alternative: var(--gold-2);
+  --pagebg-main: #040506;
+  /*--pagebg-alternative: var(--color-gray-1);*/
+  /*--pagebg-secondary: var(--color-gray-2);*/
+
+  /*--ds-overlay: var(--black-a8);*/
+  /*--ds-panel-solid: var(--gray-2);*/
+  /*--ds-panel-translucent: var(--gray-a2);*/
+  /*--ds-surface: rgba(0, 0, 0, 0.25);*/
 }
 
 :root {
-  color: var(--cnt-primary);
+  --gray-1: var(--mauve-1);
+  --gray-2: var(--mauve-2);
+  --gray-3: var(--mauve-3);
+  --gray-4: var(--mauve-4);
+  --gray-5: var(--mauve-5);
+  --gray-6: var(--mauve-6);
+  --gray-7: var(--mauve-7);
+  --gray-8: var(--mauve-8);
+  --gray-9: var(--mauve-9);
+  --gray-10: var(--mauve-10);
+  --gray-11: var(--mauve-11);
+  --gray-12: var(--mauve-12);
+
+  --gray-a1: var(--mauve-a1);
+  --gray-a2: var(--mauve-a2);
+  --gray-a3: var(--mauve-a3);
+  --gray-a4: var(--mauve-a4);
+  --gray-a5: var(--mauve-a5);
+  --gray-a6: var(--mauve-a6);
+  --gray-a7: var(--mauve-a7);
+  --gray-a8: var(--mauve-a8);
+  --gray-a9: var(--mauve-a9);
+  --gray-a10: var(--mauve-a10);
+  --gray-a11: var(--mauve-a11);
+  --gray-a12: var(--mauve-a12);
+
+  --gray-contrast: var(--mauve-contrast);
+  --gray-surface: var(--mauve-surface);
+  --gray-indicator: var(--mauve-indicator);
+  --gray-track: var(--mauve-track);
+
+  --accent-1: var(--crimson-1);
+  --accent-2: var(--crimson-2);
+  --accent-3: var(--crimson-3);
+  --accent-4: var(--crimson-4);
+  --accent-5: var(--crimson-5);
+  --accent-6: var(--crimson-6);
+  --accent-7: var(--crimson-7);
+  --accent-8: var(--crimson-8);
+  --accent-9: var(--crimson-9);
+  --accent-10: var(--crimson-10);
+  --accent-11: var(--crimson-11);
+  --accent-12: var(--crimson-12);
+
+  --accent-a1: var(--crimson-a1);
+  --accent-a2: var(--crimson-a2);
+  --accent-a3: var(--crimson-a3);
+  --accent-a4: var(--crimson-a4);
+  --accent-a5: var(--crimson-a5);
+  --accent-a6: var(--crimson-a6);
+  --accent-a7: var(--crimson-a7);
+  --accent-a8: var(--crimson-a8);
+  --accent-a9: var(--crimson-a9);
+  --accent-a10: var(--crimson-a10);
+  --accent-a11: var(--crimson-a11);
+  --accent-a12: var(--crimson-a12);
+
+  --accent-contrast: var(--crimson-contrast);
+  --accent-surface: var(--crimson-surface);
+  --accent-indicator: var(--crimson-indicator);
+  --accent-track: var(--crimson-track);
 }
 
-*,
-::before *,
-::after * {
-  border-color: var(--brd-main);
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*            Transparency             */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+/* Because Chrome is buggy with box-shadow transitions from "transparent" keyword and/or RGB color into P3 colors. */
+/* Note: using `:where` here to guarantee that the P3 color will take over regardless of the output rule order. */
+/*:where(.creightit) {
+  --color-transparent: rgb(0 0 0 / 0);
+}
+@supports (color: color(display-p3 1 1 1)) {
+  @media (color-gamut: p3) {
+    .creightit {
+      --color-transparent: color(display-p3 0 0 0 / 0);
+    }
+  }
+}*/
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*         Background and text         */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+:root {
+  color: var(--color-cnt-primary);
+  &:where([data-has-background="true"]) {
+    background-color: var(--color-background);
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*   Focus, selection, and autofill    */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+:root {
+  --focus-1: var(--color-accent-1);
+  --focus-2: var(--color-accent-2);
+  --focus-3: var(--color-accent-3);
+  --focus-4: var(--color-accent-4);
+  --focus-5: var(--color-accent-5);
+  --focus-6: var(--color-accent-6);
+  --focus-7: var(--color-accent-7);
+  --focus-8: var(--color-accent-8);
+  --focus-9: var(--color-accent-9);
+  --focus-10: var(--color-accent-10);
+  --focus-11: var(--color-accent-11);
+  --focus-12: var(--color-accent-12);
+
+  --focus-a1: var(--color-accent-a1);
+  --focus-a2: var(--color-accent-a2);
+  --focus-a3: var(--color-accent-a3);
+  --focus-a4: var(--color-accent-a4);
+  --focus-a5: var(--color-accent-a5);
+  --focus-a6: var(--color-accent-a6);
+  --focus-a7: var(--color-accent-a7);
+  --focus-a8: var(--color-accent-a8);
+  --focus-a9: var(--color-accent-a9);
+  --focus-a10: var(--color-accent-a10);
+  --focus-a11: var(--color-accent-a11);
+  --focus-a12: var(--color-accent-a12);
+}
+
+:root ::selection {
+  background-color: var(--focus-a5);
 }

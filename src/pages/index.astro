@@ -6,9 +6,12 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-  <div class="flex flex-1 flex-col gap-4 px-4 py-10">
-    <div class="bg-(--bg-main) mx-auto h-24 w-full max-w-3xl rounded-xl"></div>
-    <div class="bg-gray-200/50 mx-auto h-full w-full max-w-3xl rounded-xl">
-    </div>
+  <div class="flex flex-1 flex-col gap-4 py-10">
+    <div class="bg-panel-solid mx-auto h-24 w-full max-w-3xl rounded-2xl"></div>
+    {
+      Array.from({ length: 14 }).map((_, index) => (
+        <div class="bg-panel-solid aspect-video h-12 w-full rounded-lg" />
+      ))
+    }
   </div>
 </Layout>

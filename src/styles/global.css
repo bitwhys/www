@@ -1,6 +1,100 @@
 @import "tailwindcss";
 @import "./colors.css";
 
+@custom-variant dark (&:is(.dark, .dark *));
+
+@utility debug {
+  @apply outline outline-accent-9;
+}
+
 @theme inline {
-  --color-app: var(--pagebg-main);
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-7: var(--gray-7);
+  --color-gray-8: var(--gray-8);
+  --color-gray-9: var(--gray-9);
+  --color-gray-10: var(--gray-10);
+  --color-gray-11: var(--gray-11);
+  --color-gray-12: var(--gray-12);
+
+  --color-gray-a1: var(--gray-a1);
+  --color-gray-a2: var(--gray-a2);
+  --color-gray-a3: var(--gray-a3);
+  --color-gray-a4: var(--gray-a4);
+  --color-gray-a5: var(--gray-a5);
+  --color-gray-a6: var(--gray-a6);
+  --color-gray-a7: var(--gray-a7);
+  --color-gray-a8: var(--gray-a8);
+  --color-gray-a9: var(--gray-a9);
+  --color-gray-a10: var(--gray-a10);
+  --color-gray-a11: var(--gray-a11);
+  --color-gray-a12: var(--gray-a12);
+
+  --color-gray-contrast: var(--gray-contrast);
+  --color-gray-surface: var(--gray-surface);
+  --color-gray-indicator: var(--gray-indicator);
+  --color-gray-track: var(--gray-track);
+
+  --color-accent-1: var(--accent-1);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-accent-4: var(--accent-4);
+  --color-accent-5: var(--accent-5);
+  --color-accent-6: var(--accent-6);
+  --color-accent-7: var(--accent-7);
+  --color-accent-8: var(--accent-8);
+  --color-accent-9: var(--accent-9);
+  --color-accent-10: var(--accent-10);
+  --color-accent-11: var(--accent-11);
+  --color-accent-12: var(--accent-12);
+
+  --color-accent-a1: var(--accent-a1);
+  --color-accent-a2: var(--accent-a2);
+  --color-accent-a3: var(--accent-a3);
+  --color-accent-a4: var(--accent-a4);
+  --color-accent-a5: var(--accent-a5);
+  --color-accent-a6: var(--accent-a6);
+  --color-accent-a7: var(--accent-a7);
+  --color-accent-a8: var(--accent-a8);
+  --color-accent-a9: var(--accent-a9);
+  --color-accent-a10: var(--accent-a10);
+  --color-accent-a11: var(--accent-a11);
+  --color-accent-a12: var(--accent-a12);
+
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-surface: var(--accent-surface);
+  --color-accent-indicator: var(--accent-indicator);
+  --color-accent-track: var(--accent-track);
+}
+
+@theme inline {
+  --color-pagebg: var(--pagebg-main);
+  --color-pagebg-alternative: var(--pagebg-alternative);
+  --color-pagebg-secondary: var(--pagebg-secondary);
+
+  /* Backgrounds */
+  --color-overlay: var(--bg-overlay);
+  --color-panel-solid: var(--bg-panel-solid);
+  --color-panel-translucent: var(--bg-panel-translucent);
+  --color-surface: var(--bg-surface); /* used for 'cards' */
+
+  /* Content, Icons */
+  --color-cnt-primary: var(--cnt-primary);
+  --color-cnt-secondary: var(--cnt-secondary);
+  --color-cnt-tertiary: var(--cnt-tertiary);
+  --color-cnt-on-bold: var(--cnt-on-bold);
+
+  /*--cnt-accent: var(--lime-11);*/
+  /*--cnt-info: var(--sky-11);*/
+
+  /* Borders */
+  --color-brd-main: var(--brd-main);
+  --color-brd-alternative: var(--brd-alternative);
+  --color-brd-ring: var(--brd-ring);
+
+  --color-brd-ring-accent: var(--brd-ring-accent);
 }
