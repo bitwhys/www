@@ -46,32 +46,35 @@
     document.documentElement.classList.toggle("dark", event.matches)
   }
 
-  const handleThemeChange = (theme: Theme) => {
-    // A. Update Storage (State)
-    // B. Update DOM (View)
-    switch (theme) {
-      case "light":
-        localStorage.theme = "light"
-        document.documentElement.classList.remove("dark")
-        break
+  // const handleThemeChange = (theme: Theme) => {
+  //   // A. Update Storage (State)
+  //   // B. Update DOM (View)
+  //   switch (theme) {
+  //     case "light":
+  //       localStorage.theme = "light"
+  //       document.documentElement.classList.remove("dark")
+  //       break
 
-      case "dark":
-        localStorage.theme = "dark"
-        document.documentElement.classList.add("dark")
-        break
+  //     case "dark":
+  //       localStorage.theme = "dark"
+  //       document.documentElement.classList.add("dark")
+  //       break
 
-      case "system":
-        localStorage.removeItem("theme")
-        // CRITICAL: Immediately re-sync with system state
-        // If we don't do this, the old override persists until the OS changes.
-        document.documentElement.classList.toggle("dark", mql.matches)
-        break
-    }
+  //     case "system":
+  //       localStorage.removeItem("theme")
+  //       // CRITICAL: Immediately re-sync with system state
+  //       // If we don't do this, the old override persists until the OS changes.
+  //       document.documentElement.classList.toggle("dark", mql.matches)
+  //       break
+  //   }
+  // }
+
+  const handleThemeChange = () => {
+    const isDarkMode = document.documentElement.classList.toggle("dark")
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light")
   }
 
   // Initialize handlers
   mql.addEventListener("change", onMediaChange)
-  trigger?.addEventListener("click", () =>
-    document.documentElement.classList.toggle("dark"),
-  )
+  trigger?.addEventListener("click", handleThemeChange)
 </script>
