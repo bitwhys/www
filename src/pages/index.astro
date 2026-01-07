@@ -19,10 +19,10 @@ const posts = [
       posts.map(([title, date]) => (
         <div class="flex items-center gap-x-4">
           <div class="relative flex justify-start">
-            <h2 class="text-base font-medium whitespace-nowrap">{title}</h2>
+            <h2 class="text-base whitespace-nowrap">{title}</h2>
           </div>
-          <div aria-hidden="true" class="w-full border-t  border-brd-main" />
-          <span class="text-cnt-secondary">{date}</span>
+          <div aria-hidden="true" class="w-full border-t  border-gray-5" />
+          <span class="text-cnt-secondary font-mono text-sm">{date}</span>
         </div>
       ))
     }
