@@ -14,10 +14,10 @@ const posts = [
 
 <Layout>
   <Hero />
-  <ul class="mt-12 flex flex-col gap-y-6">
+  <ul class="group mt-12 flex flex-col">
     {
       posts.map(([title, date]) => (
-        <div class="flex items-center gap-x-4">
+        <div class="ease-[cubic-bezier(0.61,1,0.88,1)] py-2.5 transition-all duration-200 group-hover:not-hover:opacity-50 flex items-center gap-x-4 hover:cursor-pointer">
           <div class="relative flex justify-start">
             <h2 class="text-base whitespace-nowrap">{title}</h2>
           </div>
