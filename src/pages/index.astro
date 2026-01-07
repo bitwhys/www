@@ -2,29 +2,108 @@
 import Layout from "../layouts/Layout.astro"
 import Hero from "../components/Hero.astro"
 
-const posts = [
-  ["Theme Guide", "2025.07.10"],
-  ["Markdown Style Guide", "2025.06.28"],
-  ["Embedded Content", "2025.06.06"],
-  ["Katex Examples", "2025.05.19"],
-  ["Using MDX", "2025.05.12"],
-  ["The TR-808 Story", "2025.05.10"],
+const januaryPosts = [["The TR-808 Story", "23"]]
+const julyPosts = [["Theme Guide", "10"]]
+const junePosts = [
+  ["Markdown Style Guide", "28"],
+  ["Embedded Content", "06"],
+]
+const mayPosts = [
+  ["Katex Examples", "19"],
+  ["Using MDX", "12"],
 ]
 ---
 
 <Layout>
   <Hero />
-  <ul class="mt-12 flex flex-col gap-y-6">
-    {
-      posts.map(([title, date]) => (
-        <div class="flex items-center gap-x-4">
-          <div class="relative flex justify-start">
-            <h2 class="text-base font-medium whitespace-nowrap">{title}</h2>
-          </div>
-          <div aria-hidden="true" class="w-full border-t  border-brd-main" />
-          <span class="text-cnt-secondary">{date}</span>
-        </div>
-      ))
-    }
-  </ul>
+  <div class="mt-12">
+    <!-- July -->
+    <div class="space-y-4">
+      <div class="text-semibold font-mono flex items-center justify-between">
+        <span class="text-lg">2025</span><span>July</span>
+      </div>
+      <div class="space-y-6">
+        {
+          julyPosts.map(([title, date]) => (
+            <div class="flex items-center gap-x-4">
+              <div class="relative flex justify-start">
+                <h2 class="text-base whitespace-nowrap">{title}</h2>
+              </div>
+              <div
+                aria-hidden="true"
+                class="w-full border-t  border-brd-main"
+              />
+              <span class="text-cnt-secondary">{date}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <!-- June  -->
+    <div class="mt-12 space-y-4">
+      <div class="text-semibold font-mono flex items-center justify-end">
+        <span>June</span>
+      </div>
+      <div class="space-y-6">
+        {
+          junePosts.map(([title, date]) => (
+            <div class="flex items-center gap-x-4">
+              <div class="relative flex justify-start">
+                <h2 class="text-base whitespace-nowrap">{title}</h2>
+              </div>
+              <div
+                aria-hidden="true"
+                class="w-full border-t  border-brd-main"
+              />
+              <span class="text-cnt-secondary">{date}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <!-- May  -->
+    <div class="mt-12 space-y-4">
+      <div class="text-semibold font-mono flex items-center justify-end">
+        <span>May</span>
+      </div>
+      <div class="space-y-6">
+        {
+          mayPosts.map(([title, date]) => (
+            <div class="flex items-center gap-x-4">
+              <div class="relative flex justify-start">
+                <h2 class="text-base  whitespace-nowrap">{title}</h2>
+              </div>
+              <div
+                aria-hidden="true"
+                class="w-full border-t  border-brd-main"
+              />
+              <span class="text-cnt-secondary">{date}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <!-- 2024 (January) -->
+    <div class="mt-12 space-y-4">
+      <div class="text-semibold font-mono flex items-center justify-between">
+        <span class="text-lg">2024</span><span class="">January</span>
+      </div>
+      <div class="space-y-6">
+        {
+          januaryPosts.map(([title, date]) => (
+            <div class="flex items-center gap-x-4">
+              <div class="relative flex justify-start">
+                <h2 class="text-base whitespace-nowrap">{title}</h2>
+              </div>
+              <div
+                aria-hidden="true"
+                class="w-full border-t  border-brd-main"
+              />
+              <span class="text-cnt-secondary">{date}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </Layout>
