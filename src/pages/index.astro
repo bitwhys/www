@@ -1,17 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import Hero from "../components/Hero.astro"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const posts = [
+  ["Theme Guide", "2025.07.10"],
+  ["Markdown Style Guide", "2025.06.28"],
+  ["Embedded Content", "2025.06.06"],
+  ["Katex Examples", "2025.05.19"],
+  ["Using MDX", "2025.05.12"],
+  ["The TR-808 Story", "2025.05.10"],
+]
 ---
 
 <Layout>
-  <div class="flex flex-1 flex-col gap-4 py-10">
-    <div class="bg-panel-solid mx-auto h-24 w-full max-w-3xl rounded-2xl"></div>
+  <Hero />
+  <ul class="mt-12 flex flex-col gap-y-6">
     {
-      Array.from({ length: 14 }).map((_, index) => (
-        <div class="bg-panel-solid aspect-video h-12 w-full rounded-lg" />
+      posts.map(([title, date]) => (
+        <div class="flex items-center gap-x-4">
+          <div class="relative flex justify-start">
+            <h2 class="text-base font-medium whitespace-nowrap">{title}</h2>
+          </div>
+          <div aria-hidden="true" class="w-full border-t  border-brd-main" />
+          <span class="text-cnt-secondary">{date}</span>
+        </div>
       ))
     }
-  </div>
+  </ul>
 </Layout>

@@ -1,6 +1,7 @@
 <button
+  id="theme-toggle"
   type="button"
-  class="rounded-full bg-none p-1 text-sm font-semibold hover:bg-(--black-a1) dark:hover:bg-(--white-a1)"
+  class="rounded-full bg-none p-1 text-sm font-semibold hover:bg-(--black-a1) dark:hover:bg-(--white-a1) absolute top-4 right-4"
 >
   <svg
     viewBox="0 0 24 24"
@@ -30,3 +31,47 @@
     ></path>
   </svg>
 </button>
+
+<script>
+  type Theme = "light" | "dark" | "system"
+  const trigger = document.getElementById("theme-toggle")
+  const mql = window.matchMedia("(prefers-color-scheme: dark)")
+
+  const onMediaChange = (event: MediaQueryListEvent) => {
+    // 1. Gaurd Clause: Stop if user has an override
+    if ("theme" in localStorage) {
+      return
+    }
+    // 2. Sync View with System
+    document.documentElement.classList.toggle("dark", event.matches)
+  }
+
+  const handleThemeChange = (theme: Theme) => {
+    // A. Update Storage (State)
+    // B. Update DOM (View)
+    switch (theme) {
+      case "light":
+        localStorage.theme = "light"
+        document.documentElement.classList.remove("dark")
+        break
+
+      case "dark":
+        localStorage.theme = "dark"
+        document.documentElement.classList.add("dark")
+        break
+
+      case "system":
+        localStorage.removeItem("theme")
+        // CRITICAL: Immediately re-sync with system state
+        // If we don't do this, the old override persists until the OS changes.
+        document.documentElement.classList.toggle("dark", mql.matches)
+        break
+    }
+  }
+
+  // Initialize handlers
+  mql.addEventListener("change", onMediaChange)
+  trigger?.addEventListener("click", () =>
+    document.documentElement.classList.toggle("dark"),
+  )
+</script>
