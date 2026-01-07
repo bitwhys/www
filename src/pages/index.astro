@@ -14,15 +14,15 @@ const posts = [
 
 <Layout>
   <Hero />
-  <ul class="group mt-12 flex flex-col">
+  <ul class="group mt-5 flex flex-col">
     {
       posts.map(([title, date]) => (
-        <div class="ease-[cubic-bezier(0.61,1,0.88,1)] py-2.5 transition-all duration-200 group-hover:not-hover:opacity-50 flex items-center gap-x-4 hover:cursor-pointer">
+        <div class="ease-[cubic-bezier(0.61,1,0.88,1)] py-2.5 transition-all duration-200 group-hover:not-hover:opacity-35 flex items-center gap-x-4 hover:cursor-pointer">
           <div class="relative flex justify-start">
-            <h2 class="text-base whitespace-nowrap">{title}</h2>
+            <h2 class="font-medium whitespace-nowrap">{title}</h2>
           </div>
           <div aria-hidden="true" class="w-full border-t  border-gray-5" />
-          <span class="text-cnt-secondary font-mono text-sm">{date}</span>
+          <span class="text-cnt-secondary font-mono">{date}</span>
         </div>
       ))
     }

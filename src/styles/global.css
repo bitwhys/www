@@ -8,6 +8,11 @@
 }
 
 @theme inline {
+  /* Fonts */
+  --font-sans: var(--visby-font);
+  --font-mono: var(--ibm-plex-mono-font);
+  --font-heading: var(--bluu-next-font);
+
   --color-gray-1: var(--gray-1);
   --color-gray-2: var(--gray-2);
   --color-gray-3: var(--gray-3);
