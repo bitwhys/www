@@ -1,50 +1,42 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
 import Hero from "../components/Hero.astro"
 import { getCollection, type CollectionEntry } from "astro:content"
 import { compareDesc, format } from "date-fns"
 
-const posts = [
-  [
-    "The Flash & The Truth: Engineering a Robust Dark Mode in Astro",
-    "2026.01.07",
-  ],
-  ["Abstractions, Dark Mode, and React Leaks", "2026.01.05"],
-  // ["Markdown Style Guide", "2025.06.28"],
-  // ["Embedded Content", "2025.06.06"],
-  // ["Katex Examples", "2025.05.19"],
-  // ["Using MDX", "2025.05.12"],
-  // ["The TR-808 Story", "2025.05.10"],
-]
 const articles = (await getCollection("articles"))
   .sort((a, b) => compareDesc(a.data.pubDate, b.data.pubDate))
   .reduce(
     (acc, article) => {
       const title = article.data.title
       const date = format(article.data.pubDate, "yyyy-MM-dd")
-      acc.push([title, date])
+      const slug = article.id
+      acc.push({ title, date, slug })
       return acc
     },
-    [] as [string, string][],
+    [] as { title: string; date: string; slug: string }[],
   )
-console.log(articles)
 ---
 
-<Layout>
+<BaseLayout>
   <Hero />
   <ul class="group mt-5 flex flex-col">
     {
-      articles.map(([title, date]) => (
-        <div class="ease-[cubic-bezier(0.61,1,0.88,1)] py-2.5 transition-all duration-200 group-hover:not-hover:opacity-35 flex items-center gap-x-4 hover:cursor-pointer">
-          <div class="relative flex justify-start">
-            <h2 class="font-medium whitespace-nowrap">{title}</h2>
-          </div>
-          <div aria-hidden="true" class="w-full border-t  border-gray-5" />
-          <span class="text-cnt-secondary font-mono">
-            {date.replace(/-/g, ".")}
-          </span>
-        </div>
+      articles.map(({ title, date, slug }) => (
+        <li class="ease-[cubic-bezier(0.61,1,0.88,1)] py-2.5 transition-all duration-200 group-hover:not-hover:opacity-35">
+          <a href={`/articles/${slug}`} class="debug">
+            <div class="flex items-center gap-x-4">
+              <div class="relative flex justify-start">
+                <h2 class="font-medium whitespace-nowrap">{title}</h2>
+              </div>
+              <div aria-hidden="true" class="w-full border-t  border-gray-5" />
+              <span class="text-cnt-secondary font-mono text-sm">
+                {date.replace(/-/g, ".")}
+              </span>
+            </div>
+          </a>
+        </li>
       ))
     }
   </ul>
-</Layout>
+</BaseLayout>

@@ -16,6 +16,7 @@ import "../styles/global.css"
     <Font cssVariable="--visby-font" preload />
     <Font cssVariable="--ibm-plex-mono-font" preload />
     <Font cssVariable="--bluu-next-font" preload />
+    <Font cssVariable="--bluu-next-titling-font" preload />
     <script is:inline>
       document.documentElement.classList.toggle(
         "dark",
@@ -31,14 +32,13 @@ import "../styles/global.css"
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
         <ThemeToggle />
-        <span
+        <a
+          href="/"
           class="absolute top-4 left-4 text-base font-medium font-heading tracking-widest"
         >
-          /ˈteknək(ə)l/</span
+          /ˈteknək(ə)l/</a
         >
-        <main>
-          <slot />
-        </main>
+        <slot />
         <!-- <Footer /> -->
       </div>
     </div>
