@@ -1,5 +1,5 @@
 ---
-title: 'Embedded Content'
+title: "Embedded Content"
 pubDate: 2025-06-06
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Draft Example'
+title: "Draft Example"
 pubDate: 2025-07-09
 ---
 

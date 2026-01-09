@@ -1,5 +1,5 @@
 ---
-title: 'KaTeX Examples'
+title: "KaTeX Examples"
 pubDate: 2025-05-19
 ---
 

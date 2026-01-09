@@ -1,8 +1,8 @@
 ---
 // import Header from "../components/Header.astro"
 // import Footer from "../components/Footer.astro"
-import ThemeToggle from "../components/ThemeToggle.astro"
 import { Font } from "astro:assets"
+import ThemeToggle from "../components/ThemeToggle.astro"
 import "../styles/global.css"
 ---
 
@@ -27,14 +27,14 @@ import "../styles/global.css"
     </script>
     <title>A Bit Technical</title>
   </head>
-  <body class="antialiased min-h-screen bg-pagebg-secondary bg-grid-pattern">
+  <body class="bg-pagebg-secondary bg-grid-pattern min-h-screen antialiased">
     {/* TODO: ThemeProvider  */}
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+      <div class="mx-auto w-full max-w-2xl px-4 sm:px-6 lg:px-8">
         <ThemeToggle />
         <a
           href="/"
-          class="absolute top-4 left-4 text-base font-medium font-heading tracking-widest"
+          class="font-heading absolute top-4 left-4 text-base font-medium tracking-widest"
         >
           /ˈteknək(ə)l/</a
         >

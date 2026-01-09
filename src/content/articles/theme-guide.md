@@ -1,5 +1,5 @@
 ---
-title: 'Theme Guide'
+title: "Theme Guide"
 pubDate: 2025-07-10
 ---
 
@@ -79,16 +79,16 @@ You can configure the theme via `shikiConfig` in `astro.config.ts`.
 More details: [Syntax Highlighting | Astro Docs](https://docs.astro.build/en/guides/syntax-highlighting/)
 
 ```ts
-import { defineConfig } from 'astro/config'
+import { defineConfig } from "astro/config"
 
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      light: 'github-light',
-      dark: 'github-dark',
-      wrap: false
-    }
-  }
+      light: "github-light",
+      dark: "github-dark",
+      wrap: false,
+    },
+  },
 })
 ```
 
