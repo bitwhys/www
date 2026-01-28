@@ -33,7 +33,7 @@ Trying to analyze the WASM file directly wasn't fruitful; at 15MB, it took way t
 
 This was the cause, and this was just a small section of the resulting WebAssembly (in textual form):
 
-```
+```go
 var html5entities = map[string]*HTML5Entity{
     "AElig":  {Name: "AElig", CodePoints: []int{198}, Characters: []byte{0xc3, 0x86}},
     "AMP":    {Name: "AMP", CodePoints: []int{38}, Characters: []byte{0x26}},
@@ -55,7 +55,7 @@ Answering this question will require us to dig into the Go compiler a little bit
 
 Here's a [small example](https://godbolt.org/z/85PrTrd59) of the assembly Go generates for a map. I've heavily edited the assembly for clarity, including deleting a bunch of code that didn't seem relevant, so know that this only shows the general structure.
 
-```
+```go
 package main
 
 func main() {}
@@ -67,7 +67,7 @@ var myMap = map[string]string{
 }
 ```
 
-```
+```asm wrap
 init:
         CALL    runtime.makemap_small(SB)       # make the map
         LEAQ    go.string."foo"(SB), DX
@@ -120,7 +120,7 @@ At this point Asaf suggested that we could fork Goldmark and initialize this map
 
 Turns out he was right! We turned the map literal into an array literal, and then looped over it on startup to create the map, [like so](https://godbolt.org/z/hqd6438j1):
 
-```
+```go
 package main
 
 func main() {}

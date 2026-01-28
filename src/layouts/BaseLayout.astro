@@ -14,9 +14,9 @@ import "../styles/global.css"
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <Font cssVariable="--visby-font" preload />
-    <Font cssVariable="--ibm-plex-mono-font" preload />
+    <Font cssVariable="--geist-mono-font" preload />
+    <Font cssVariable="--geist-sans-font" preload />
     <Font cssVariable="--bluu-next-font" preload />
-    <Font cssVariable="--bluu-next-titling-font" preload />
     <script is:inline>
       document.documentElement.classList.toggle(
         "dark",
@@ -37,11 +37,11 @@ import "../styles/global.css"
   <body class="bg-pagebg-secondary bg-grid-pattern min-h-screen antialiased">
     {/* TODO: ThemeProvider  */}
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto w-full max-w-2xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto w-full max-w-2xl px-4">
         <ThemeToggle />
         <a
           href="/"
-          class="font-heading absolute top-4 left-4 text-base font-medium tracking-widest"
+          class="absolute top-4 left-4 font-mono text-sm font-medium tracking-widest"
         >
           /ˈteknək(ə)l/</a
         >

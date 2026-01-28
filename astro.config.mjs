@@ -1,5 +1,8 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config"
+import rehypeKatex from "rehype-katex"
+import rehypePrettyCode from "rehype-pretty-code"
+import remarkMath from "remark-math"
 
 import tailwindcss from "@tailwindcss/vite"
 
@@ -13,13 +16,18 @@ export default defineConfig({
     fonts: [
       {
         provider: fontProviders.google(),
+        name: "Geist Mono",
+        cssVariable: "--geist-mono-font",
+      },
+      {
+        provider: fontProviders.google(),
         name: "IBM Plex Mono",
         cssVariable: "--ibm-plex-mono-font",
       },
       {
         provider: fontProviders.google(),
-        name: "IBM Plex Sans",
-        cssVariable: "--ibm-plex-sans-font",
+        name: "Geist",
+        cssVariable: "--geist-sans-font",
       },
       {
         provider: fontProviders.local(),
@@ -169,8 +177,10 @@ export default defineConfig({
   integrations: [
     expressiveCode({
       themes: ["dracula", "github-light"],
+      useDarkModeMediaQuery: false,
       themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
       styleOverrides: {
+        codeFontFamily: "var(--geist-mono-font)",
         borderRadius: "var(--radius-2xl)",
         frames: {
           shadowColor: "var(--codeblack-frame-shadow-color)",
@@ -179,4 +189,8 @@ export default defineConfig({
     }),
     mdx(),
   ],
+  markdown: {
+    rehypePlugins: [rehypeKatex],
+    remarkPlugins: [remarkMath],
+  },
 })

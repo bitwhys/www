@@ -27,7 +27,9 @@ const articles = (await getCollection("articles"))
           <a href={`/articles/${slug}`} class="debug">
             <div class="flex items-center gap-x-4">
               <div class="relative flex justify-start">
-                <h2 class="font-medium whitespace-nowrap">{title}</h2>
+                <h2 class="font-headings font-medium whitespace-nowrap">
+                  {title}
+                </h2>
               </div>
               <div aria-hidden="true" class="border-gray-5 w-full border-t" />
               <span class="text-cnt-secondary font-mono text-sm">

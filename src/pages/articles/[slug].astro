@@ -17,9 +17,18 @@ console.log(headings)
 ---
 
 <BaseLayout>
+  <div
+    id="blurr-effect"
+    class="sticky top-0 z-40 h-16 [background:linear-gradient(var(--color-pagebg-secondary),70%,transparent)]"
+  >
+  </div>
   <main class="pt-24 text-base">
-    <h1 class="mb-8 text-center text-5xl">{article?.data.title}</h1>
-    <article class="prose dark:prose-invert max-w-none">
+    <h1 class="font-headings mb-8 text-center text-5xl">
+      {article?.data.title}
+    </h1>
+    <article
+      class="prose prose-headings:font-headings dark:prose-invert max-w-none"
+    >
       <Content />
     </article>
   </main>

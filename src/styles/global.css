@@ -41,10 +41,10 @@
 
 @theme inline {
   /* Fonts */
-  --font-sans: var(--visby-font);
-  --font-mono: var(--ibm-plex-mono-font);
-  --font-heading: var(--bluu-next-font);
-  --font-title: var(--bluu-next-titling-font);
+  --font-sans: var(--geist-sans-font);
+  --font-headings: var(--visby-font);
+  --font-mono: var(--geist-mono-font);
+  --font-display: var(--bluu-next-font);
 
   --color-gray-1: var(--gray-1);
   --color-gray-2: var(--gray-2);
