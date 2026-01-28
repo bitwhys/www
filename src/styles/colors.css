@@ -38,6 +38,8 @@
   --brd-alternative: var(--color-gray-7);
   --brd-ring: var(--color-gray-8);
 
+  --codeblack-frame-shadow-color: var(--color-gray-a5);
+
   --brd-ring-accent: var(--lime-8);
   /*--brd-info: var(--sky-8);*/
   /*--brd-success: #128700;*/
@@ -96,6 +98,8 @@
   /*--ds-panel-solid: var(--gray-2);*/
   /*--ds-panel-translucent: var(--gray-a2);*/
   /*--ds-surface: rgba(0, 0, 0, 0.25);*/
+
+  --codeblack-frame-shadow-color: var(--black-a9);
 }
 
 :root {

@@ -18,7 +18,9 @@ console.log(headings)
 
 <BaseLayout>
   <main class="pt-24 text-base">
-    <h1 class="text-center text-5xl">{article?.data.title}</h1>
-    <Content class="prose" />
+    <h1 class="mb-8 text-center text-5xl">{article?.data.title}</h1>
+    <article class="prose dark:prose-invert max-w-none">
+      <Content />
+    </article>
   </main>
 </BaseLayout>

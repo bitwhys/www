@@ -41,7 +41,7 @@ general: {
 },
 ```
 
-```ts
+```ts wrap
 // Date Settings
 date: {
   dateFormat: 'YYYY-MM-DD', // Date format: YYYY-MM-DD, MM-DD-YYYY, DD-MM-YYYY, MONTH DAY YYYY, DAY MONTH YYYY

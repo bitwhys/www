@@ -33,7 +33,6 @@
 </button>
 
 <script>
-  type Theme = "light" | "dark" | "system"
   const trigger = document.getElementById("theme-toggle")
   const mql = window.matchMedia("(prefers-color-scheme: dark)")
 
@@ -44,6 +43,9 @@
     }
     // 2. Sync View with System
     document.documentElement.classList.toggle("dark", event.matches)
+    event.matches
+      ? document.documentElement.setAttribute("data-theme", "dracula")
+      : document.documentElement.setAttribute("data-theme", "github-light")
   }
 
   // const handleThemeChange = (theme: Theme) => {
