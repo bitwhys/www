@@ -44,8 +44,8 @@
     // 2. Sync View with System
     document.documentElement.classList.toggle("dark", event.matches)
     event.matches
-      ? document.documentElement.setAttribute("data-theme", "dracula")
-      : document.documentElement.setAttribute("data-theme", "github-light")
+      ? document.documentElement.setAttribute("data-theme", "dracula-soft")
+      : document.documentElement.setAttribute("data-theme", "snazzy-light")
   }
 
   // const handleThemeChange = (theme: Theme) => {
@@ -76,8 +76,8 @@
     localStorage.setItem("theme", isDarkMode ? "dark" : "light")
     // update view
     isDarkMode
-      ? document.documentElement.setAttribute("data-theme", "dracula")
-      : document.documentElement.setAttribute("data-theme", "github-light")
+      ? document.documentElement.setAttribute("data-theme", "dracula-soft")
+      : document.documentElement.setAttribute("data-theme", "snazzy-light")
   }
 
   // Initialize handlers

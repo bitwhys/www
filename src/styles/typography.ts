@@ -101,7 +101,7 @@ export default {
 
           // Images
           img: {
-            borderRadius: theme("borderRadius.2xl"),
+            borderRadius: theme("borderRadius.xl"),
           },
 
           // Inline elements
@@ -198,7 +198,7 @@ export default {
             fontSize: theme("fontSize.sm")[0],
             fontWeight: theme("fontWeight.medium"),
             backgroundColor: "var(--tw-prose-pre-bg)",
-            borderRadius: theme("borderRadius.2xl"),
+            borderRadius: theme("borderRadius.xl"),
             padding: theme("spacing.8"),
             overflowX: "auto",
             border: "1px solid",

@@ -176,12 +176,13 @@ export default defineConfig({
 
   integrations: [
     expressiveCode({
-      themes: ["dracula", "github-light"],
+      themes: ["dracula-soft", "snazzy-light"],
       useDarkModeMediaQuery: false,
       themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
       styleOverrides: {
         codeFontFamily: "var(--geist-mono-font)",
-        borderRadius: "var(--radius-2xl)",
+        borderRadius: "var(--radius-xl)",
+        borderColor: "var(--color-brd-main)",
         frames: {
           shadowColor: "var(--codeblack-frame-shadow-color)",
         },

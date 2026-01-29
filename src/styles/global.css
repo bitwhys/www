@@ -150,5 +150,9 @@
     @apply rounded-sm px-0.5;
     background-color: var(--color-accent-a9);
     color: var(--color-accent-a12);
+
+    @variant dark {
+      color: var(--color-accent-contrast);
+    }
   }
 }
