@@ -46,9 +46,71 @@ These are what the generic callouts look like (of course, all the text is made u
   
   See the [Browser Compatibility Table](#) for detailed information.
 </Callout>
----
 
-## Ref
+<Callout title="Critical data loss risk" variant="danger">
+  Running this command will **permanently delete** all files in your current directory. Make sure to back up important data before proceeding.
+  
+  ```bash title="danger.sh"
+  # This will delete everything in the current directory
+  rm -rf ./*
+  # Safer alternative with confirmation
+  rm -ri ./*
+  ```
+  
+  This operation cannot be undone and recovery tools may not be able to restore your data.
+</Callout>
 
-- [MDX Syntax Documentation](https://mdxjs.com/docs/what-is-mdx)
-- [Astro Usage Documentation](https://docs.astro.build/en/guides/markdown-content/#markdown-and-mdx-pages)
+<Callout title="Major API changes in v2.0" variant="important">
+  Version 2.0 introduces significant API changes. You'll need to update your existing code to use the new parameter structure.
+
+  1. The `configure(){:js}` method now returns a Promise
+  2. Authentication requires an API key object instead of a string
+  3. Event handlers use a new callback pattern
+  
+  A migration example looks like the following:
+  ```diff lang="js"
+  - app.configure("api-key-string");
+  + await app.configure({ key: "api-key-string", version: "2.0" });
+  
+  - app.on('event', callback);
+  + app.on('event', { handler: callback, options: { once: true } });
+  ```
+</Callout>
+
+## Mathematical callouts
+
+Like I mentioned before, some of these variants are meant to be nested within each other. Take, for example, the following:
+
+<Callout title="Continuous function" variant="definition">
+  A function $f: X \rightarrow Y$ between topological spaces is continuous if for every open set $V \subseteq Y$, the preimage $f^{-1}(V) \subseteq X$ is open in $X$.
+  
+  <Callout title="Equivalent formulations" variant="explanation">
+    For metric spaces, continuity can be characterized by: $\forall \varepsilon > 0, \exists \delta > 0$ such that $d_X(x,y) < \delta \implies d_Y(f(x),f(y)) < \varepsilon$. This captures the intuition that points close to each other in $X$ map to points close to each other in $Y$.
+  </Callout>
+</Callout>
+
+<Callout title="Law of Large Numbers" variant="theorem">
+  Let $X_1, X_2, \ldots$ be a sequence of independent and identically distributed random variables with expected value $\mathbb{E}[X_i] = \mu < \infty$. Then for any $\varepsilon > 0$:
+  $$
+    \lim_{n \to \infty} P\left(\left|\frac{1}{n}\sum_{i=1}^{n}X_i - \mu\right| > \varepsilon\right) = 0
+  $$
+  
+  <Callout title="Proof" variant="proof">
+    We'll prove this using Chebyshev's inequality. Let $S_n = \sum_{i=1}^{n}X_i$ and $\sigma^2 = \text{Var}(X_i)$. By Chebyshev's inequality:
+    $$
+      P\left(\left|\frac{S_n}{n} - \mu\right| \geq \varepsilon\right) \leq \frac{\text{Var}(S_n/n)}{\varepsilon^2}
+    $$
+    
+    Since the variables are independent, we have:
+    $$
+      \text{Var}(S_n/n) = \frac{\text{Var}(S_n)}{n^2} = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}
+    $$
+    
+    Substituting this into our inequality:
+    $$
+      P\left(\left|\frac{S_n}{n} - \mu\right| \geq \varepsilon\right) \leq \frac{\sigma^2}{n\varepsilon^2}
+    $$
+    
+    As $n \to \infty$, the right side approaches 0, which proves the theorem.
+  </Callout>
+</Callout>

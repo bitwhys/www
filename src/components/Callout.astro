@@ -20,23 +20,23 @@ const calloutConfig = {
     icon: "lucide:alert-triangle",
   },
   danger: {
-    style: "border-red-500 dark:bg-red-950/5",
-    textColor: "text-red-700 dark:text-red-300",
+    style: "border-(--tomato-9) bg-(--tomato-a3)",
+    textColor: "text-(--tomato-11)",
     icon: "lucide:shield-alert",
   },
   important: {
-    style: "border-purple-500 dark:bg-purple-950/5",
-    textColor: "text-purple-700 dark:text-purple-300",
+    style: "border-(--violet-9) bg-(--violet-a3)",
+    textColor: "text-(--violet-11)",
     icon: "lucide:message-square-warning",
   },
   definition: {
-    style: "border-purple-500 dark:bg-purple-950/5",
-    textColor: "text-purple-700 dark:text-purple-300",
+    style: "border-(--purple-9) bg-(--purple-a3)",
+    textColor: "text-(--purple-11)",
     icon: "lucide:book-open",
   },
   theorem: {
-    style: "border-teal-500 dark:bg-teal-950/5",
-    textColor: "text-teal-700 dark:text-teal-300",
+    style: "border-(--cyan-9) bg-(--cyan-a3)",
+    textColor: "text-(--cyan-11)",
     icon: "lucide:check-circle",
   },
   lemma: {
@@ -44,9 +44,11 @@ const calloutConfig = {
     textColor: "text-sky-700 dark:text-sky-300",
     icon: "lucide:puzzle",
   },
+  // TODO: this is hideos
   proof: {
-    style: "border-gray-500 dark:bg-gray-950/5",
-    textColor: "text-gray-700 dark:text-gray-300",
+    style:
+      "border-(--black-a9) bg-(--white-a9) dark:border-(--white-a9) dark:bg-(--black-a3)",
+    textColor: "text-(--gray-11)",
     icon: "lucide:check-square",
   },
   corollary: {
