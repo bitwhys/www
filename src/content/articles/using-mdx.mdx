@@ -3,26 +3,49 @@ title: "Using MDX"
 pubDate: 2025-05-12
 ---
 
-import Callout from "@/components/examples/Callout.astro"
-import CounterButton from "@/components/examples/CounterButton.astro"
-import Tag from "@/components/examples/Tag.astro"
+import Callout from "../../components/Callout.astro"
 
 MDX combines Markdown with embedded JavaScript and JSX, making it easy to build interactive content. Below are some examples.
 
 ---
 
-## Callout
+## Generic callouts
 
-<Callout />
+These are what the generic callouts look like (of course, all the text is made up):
 
-## Button
+<Callout title="Prerequisites for advanced React development" variant="note">
+  This tutorial assumes you're familiar with React hooks and the component lifecycle. If you need a refresher, check out the [official React documentation](https://reactjs.org/docs/hooks-intro.html) before proceeding.
+</Callout>
 
-<CounterButton />
+<Callout title="Productivity enhancement" variant="tip">
+  You can quickly format your code by pressing <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> (Windows/Linux) or <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>F</kbd> (Mac).
+  
+  Additional shortcuts include:
+  
+  | Action | Windows/Linux | Mac |
+  | ------ | ------------- | --- |
+  | Search | <kbd>Ctrl</kbd> + <kbd>F</kbd> | <kbd>Cmd</kbd> + <kbd>F</kbd> |
+  | Replace | <kbd>Ctrl</kbd> + <kbd>H</kbd> | <kbd>Cmd</kbd> + <kbd>H</kbd> |
+  | Save all | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd> | <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>S</kbd> |
+</Callout>
 
-## Tag
-
-<Tag />
-
+<Callout title="Cross-browser compatibility issues" variant="warning">
+  This API is **not supported** in Internet Explorer and has limited support in older browsers. Make sure to include appropriate polyfills.
+  
+  ```js title="polyfill.js"
+  if (!Object.fromEntries) {
+    Object.fromEntries = function(entries) {
+      const obj = {};
+      for (const [key, value] of entries) {
+        obj[key] = value;
+      }
+      return obj;
+    };
+  }
+  ```
+  
+  See the [Browser Compatibility Table](#) for detailed information.
+</Callout>
 ---
 
 ## Ref

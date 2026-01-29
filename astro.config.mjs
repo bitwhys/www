@@ -10,6 +10,8 @@ import mdx from "@astrojs/mdx"
 
 import expressiveCode from "astro-expressive-code"
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   experimental: {
@@ -174,22 +176,19 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [
-    expressiveCode({
-      themes: ["dracula-soft", "snazzy-light"],
-      useDarkModeMediaQuery: false,
-      themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
-      styleOverrides: {
-        codeFontFamily: "var(--geist-mono-font)",
-        borderRadius: "var(--radius-xl)",
-        borderColor: "var(--color-brd-main)",
-        frames: {
-          shadowColor: "var(--codeblack-frame-shadow-color)",
-        },
+  integrations: [expressiveCode({
+    themes: ["dracula-soft", "snazzy-light"],
+    useDarkModeMediaQuery: false,
+    themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
+    styleOverrides: {
+      codeFontFamily: "var(--geist-mono-font)",
+      borderRadius: "var(--radius-xl)",
+      borderColor: "var(--color-brd-main)",
+      frames: {
+        shadowColor: "var(--codeblack-frame-shadow-color)",
       },
-    }),
-    mdx(),
-  ],
+    },
+  }), mdx(), icon()],
   markdown: {
     rehypePlugins: [rehypeKatex],
     remarkPlugins: [remarkMath],

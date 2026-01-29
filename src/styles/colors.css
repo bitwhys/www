@@ -1,5 +1,21 @@
 @import "@radix-ui/colors/black-alpha.css";
 @import "@radix-ui/colors/white-alpha.css";
+/* Supporting colors (callouts..etc) */
+@import "@radix-ui/colors/amber-alpha.css";
+@import "@radix-ui/colors/amber.css";
+@import "@radix-ui/colors/amber-dark-alpha.css";
+@import "@radix-ui/colors/amber-dark.css";
+
+@import "@radix-ui/colors/indigo-alpha.css";
+@import "@radix-ui/colors/indigo.css";
+@import "@radix-ui/colors/indigo-dark-alpha.css";
+@import "@radix-ui/colors/indigo-dark.css";
+
+@import "@radix-ui/colors/grass-alpha.css";
+@import "@radix-ui/colors/grass.css";
+@import "@radix-ui/colors/grass-dark-alpha.css";
+@import "@radix-ui/colors/grass-dark.css";
+
 @import "./palette/olive.css";
 @import "./palette/lime.css";
 
