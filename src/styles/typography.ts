@@ -101,7 +101,7 @@ export default {
 
           // Images
           img: {
-            borderRadius: theme("borderRadius.xl"),
+            borderRadius: theme("borderRadius.lg"),
           },
 
           // Inline elements
@@ -128,7 +128,7 @@ export default {
             fontSize: theme("fontSize.sm")[0],
             fontWeight: theme("fontWeight.semibold"),
             backgroundColor: "var(--tw-prose-code-bg)",
-            borderRadius: theme("borderRadius.lg"),
+            borderRadius: theme("borderRadius.md"),
             paddingLeft: theme("spacing.1"),
             paddingRight: theme("spacing.1"),
           },
@@ -198,7 +198,7 @@ export default {
             fontSize: theme("fontSize.sm")[0],
             fontWeight: theme("fontWeight.medium"),
             backgroundColor: "var(--tw-prose-pre-bg)",
-            borderRadius: theme("borderRadius.xl"),
+            borderRadius: theme("borderRadius.md"),
             padding: theme("spacing.8"),
             overflowX: "auto",
             border: "1px solid",
