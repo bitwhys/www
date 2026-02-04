@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from "astro:content"
 import Layout from "../layouts/Layout.astro"
 import NarrowWrapper from "../layouts/NarrowWrapper.astro"
 import BaseHead from "../components/BaseHead.astro"
+import { timeAgo, postAgeFromPubDate } from "../utils/formatters"
 
 export async function getStaticPaths() {
   // TODO
@@ -18,17 +19,24 @@ const { Content, headings } = await render(article!)
 ---
 
 <Layout>
-  <BaseHead slot="head" title={article?.data.title} />
+  <BaseHead slot="head" title={article?.data.title!} />
   <NarrowWrapper>
-    <Fragment class="pt-24 text-base">
-      <h1 class="font-display mb-8 text-center text-5xl">
-        {article?.data.title}
-      </h1>
+    <div class="pt-24 text-base">
+      <header class="space-y-2">
+        <div
+          class="text-center uppercase text-sm text-cnt-supportive font-mono font-medium"
+        >
+          {postAgeFromPubDate(article?.data.pubDate!)}
+        </div>
+        <h1 class="font-display mb-8 text-center text-5xl">
+          {article?.data.title}
+        </h1>
+      </header>
       <article
         class="prose prose-headings:font-display dark:prose-invert max-w-none"
       >
         <Content />
       </article>
-    </Fragment>
+    </div>
   </NarrowWrapper>
 </Layout>
