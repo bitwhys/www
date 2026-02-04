@@ -118,4 +118,8 @@
     @apply text-cnt-primary;
     word-wrap: break-word;
   }
+
+  .expresive-code .copy {
+    @apply rounded-2xl hover:bg-(--olive-a4);
+  }
 }

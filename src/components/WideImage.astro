@@ -1,0 +1,13 @@
+---
+import { cx } from "../utils/cx"
+interface Props {
+  src: string
+  alt: string
+  class?: string
+}
+const { src, alt, class: className } = Astro.props
+---
+
+<div class={cx("relative max-w-screen -mx-44 ", className)}>
+  <img src={src} alt={alt} class="w-full h-auto object-cover shadow-2xl" />
+</div>

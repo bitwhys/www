@@ -44,7 +44,7 @@ export default {
           "--tw-prose-code": theme("colors.brand.11"),
           "--tw-prose-code-bg": theme("colors.brand.a4"),
           "--tw-prose-pre-border": theme("colors.gray.a3"),
-          "--tw-prose-th-borders": theme("colors.brd.alternative"),
+          "--tw-prose-th-borders": theme("colors.brd.control"),
           "--tw-prose-td-borders": theme("colors.brd.line"),
 
           "--tw-prose-invert-body": theme("colors.cnt.secondary"),
