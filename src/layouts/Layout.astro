@@ -1,13 +1,16 @@
 ---
-
+import SiteHeader from "../components/SiteHeader.astro"
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full bg-page">
   <head>
     <slot name="head" />
   </head>
-  <body>
-    <slot />
+  <body class="h-full antialiased">
+    <SiteHeader />
+    <main class="relative pt-16">
+      <slot />
+    </main>
   </body>
 </html>

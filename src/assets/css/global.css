@@ -38,6 +38,10 @@
   *,
   *::before,
   *::after {
-    @apply border-brd-line;
+    @apply border-brd-line ring-brd-line outline-brd-line;
+  }
+  body {
+    @apply text-cnt-primary;
+    word-wrap: break-word;
   }
 }
