@@ -11,6 +11,7 @@
   --font-sans: var(--geist-sans-font);
   --font-mono: var(--geist-mono-font);
   --font-display: var(--visby-font);
+  --font-fancy: var(--bluu-next-font);
 
   /* content (text, icons) */
   --color-cnt-primary: var(--olive-12);
@@ -41,6 +42,10 @@
   :root {
     --page-background: var(--olive-2);
     --bg-surface: var(--white-a12);
+  }
+  :root ::selection {
+    background-color: var(--lime-a5);
+    color: var(--lime-11);
   }
   .dark {
     --page-background: var(--olive-1);

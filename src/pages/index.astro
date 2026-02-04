@@ -1,195 +1,58 @@
 ---
+import { getCollection } from "astro:content"
+import { compareDesc, format } from "date-fns"
 import BaseHead from "../components/BaseHead.astro"
 import Layout from "../layouts/Layout.astro"
 import NarrowWrapper from "../layouts/NarrowWrapper.astro"
+import Hero from "../components/Hero.astro"
+
+const posts = [
+  ["Theme Guide", "2025.07.10"],
+  ["Markdown Style Guide", "2025.06.28"],
+  ["Embedded Content", "2025.06.06"],
+  ["Katex Examples", "2025.05.19"],
+  ["Using MDX", "2025.05.12"],
+  ["The TR-808 Story", "2025.05.10"],
+]
+
+const articles = (await getCollection("articles"))
+  .sort((a, b) => compareDesc(a.data.pubDate, b.data.pubDate))
+  .reduce(
+    (acc, article) => {
+      const title = article.data.title
+      const date = format(article.data.pubDate, "yyyy-MM-dd")
+      const slug = article.id
+      acc.push({ title, date, slug })
+      return acc
+    },
+    [] as { title: string; date: string; slug: string }[],
+  )
 ---
 
 <Layout>
   <BaseHead title="Home" slot="head" />
-  <div class="py-24 sm:py-32">
-    <NarrowWrapper>
-      <h2
-        class="font-display text-4xl tracking-tight text-pretty text-cnt-primary sm:text-5xl"
-      >
-        From the blog
-      </h2>
-      <p class="mt-2 text-lg/8 text-cnt-secondary">
-        Learn how to grow your business with our expert advice.
-      </p>
-      <div class="mt-10 space-y-16 border-t pt-10 sm:mt-16 sm:pt-16">
-        <article class="flex max-w-xl flex-col items-start justify-between">
-          <div class="flex items-center gap-x-4 text-xs">
-            <time datetime="2020-03-16" class="text-cnt-supportive"
-              >Mar 16, 2020</time
-            >
-            <a
-              href="#"
-              class="relative z-10 rounded-full bg-(--black-a1) px-3 py-1.5 font-medium text-cnt-secondary hover:bg-gray-100 dark:bg-(--white-a2) dark:hover:bg-(--white-a3)"
-              >Marketing</a
-            >
-          </div>
-          <div class="group relative">
-            <h3
-              class="mt-3 text-lg/6 font-semibold text-cnt-primary group-hover:text-cnt-secondary"
-            >
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                Boost your conversion rate
-              </a>
-            </h3>
-            <p class="mt-5 line-clamp-3 text-sm/6 text-cnt-secondary">
-              Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam
-              vitae illo. Non aliquid explicabo necessitatibus unde. Sed
-              exercitationem placeat consectetur nulla deserunt vel iusto
-              corrupti dicta laboris incididunt.
-            </p>
-          </div>
-          <div class="relative mt-8 flex items-center gap-x-4">
-            <img
-              src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-              class="size-10 rounded-full bg-gray-50 dark:bg-gray-800"
-            />
-            <div class="text-sm/6">
-              <p class="font-semibold text-cnt-primary">
-                <a href="#">
-                  <span class="absolute inset-0"></span>
-                  Michael Foster
-                </a>
-              </p>
-              <p class="text-cnt-secondary">Co-Founder / CTO</p>
-            </div>
-          </div>
-        </article>
-        <article class="flex max-w-xl flex-col items-start justify-between">
-          <div class="flex items-center gap-x-4 text-xs">
-            <time datetime="2020-03-10" class="text-cnt-supportive"
-              >Mar 10, 2020</time
-            >
-            <a
-              href="#"
-              class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-(--olive-a3) dark:text-gray-300 dark:hover:bg-gray-800"
-              >Sales</a
-            >
-          </div>
-          <div class="group relative">
-            <h3
-              class="mt-3 text-lg/6 font-semibold text-cnt-primary group-hover:text-cnt-secondary"
-            >
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                How to use search engine optimization to drive sales
-              </a>
-            </h3>
-            <p class="mt-5 line-clamp-3 text-sm/6 text-cnt-secondary">
-              Optio sit exercitation et ex ullamco aliquid explicabo. Dolore do
-              ut officia anim non ad eu. Magna laboris incididunt commodo elit
-              ipsum.
-            </p>
-          </div>
-          <div class="relative mt-8 flex items-center gap-x-4">
-            <img
-              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-              class="size-10 rounded-full bg-gray-50 dark:bg-gray-800"
-            />
-            <div class="text-sm/6">
-              <p class="font-semibold text-cnt-primary">
-                <a href="#">
-                  <span class="absolute inset-0"></span>
-                  Lindsay Walton
-                </a>
-              </p>
-              <p class="text-cnt-secondary">Front-end Developer</p>
-            </div>
-          </div>
-        </article>
-        <article class="flex max-w-xl flex-col items-start justify-between">
-          <div class="flex items-center gap-x-4 text-xs">
-            <time datetime="2020-02-12" class="text-cnt-supportive"
-              >Feb 12, 2020</time
-            >
-            <a
-              href="#"
-              class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800"
-              >Business</a
-            >
-          </div>
-          <div class="group relative">
-            <h3
-              class="mt-3 text-lg/6 font-semibold text-cnt-primary group-hover:text-cnt-secondary"
-            >
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                Improve your customer experience
-              </a>
-            </h3>
-            <p class="mt-5 line-clamp-3 text-sm/6 text-cnt-secondary">
-              Dolore commodo in nulla do nulla esse consectetur. Adipisicing
-              voluptate velit sint adipisicing ex duis elit deserunt sint ipsum.
-              Culpa in exercitation magna adipisicing id reprehenderit
-              consectetur culpa eu cillum.
-            </p>
-          </div>
-          <div class="relative mt-8 flex items-center gap-x-4">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-              class="size-10 rounded-full bg-gray-50 dark:bg-gray-800"
-            />
-            <div class="text-sm/6">
-              <p class="font-semibold text-cnt-primary">
-                <a href="#">
-                  <span class="absolute inset-0"></span>
-                  Tom Cook
-                </a>
-              </p>
-              <p class="text-cnt-secondary">Director of Product</p>
-            </div>
-          </div>
-        </article>
-
-        <div class="">
-          <div
-            class="relative max-lg:row-start-1 ring ring-offset-2 ring-offset-page ring-brd-line dark:ring-(--white-a3) rounded-lg"
-          >
-            <div
-              class="absolute inset-px rounded-lg bg-surface max-lg:rounded-t-4xl"
-            >
-            </div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]"
-            >
-              <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p
-                  class="mt-2 text-lg font-medium tracking-tight text-cnt-primary max-lg:text-center"
-                >
-                  Performance
-                </p>
-                <p
-                  class="mt-2 max-w-lg text-sm/6 text-cnt-secondary max-lg:text-center"
-                >
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                  maiores impedit.
-                </p>
+  <NarrowWrapper>
+    <Hero />
+    <ul class="group mt-5 flex flex-col">
+      {
+        articles.map(({ title, date, slug }) => (
+          <li class="py-2.5 transition-all duration-200 ease-[cubic-bezier(0.61,1,0.88,1)] group-hover:not-hover:opacity-35">
+            <a href={`/articles/${slug}`} class="debug">
+              <div class="flex items-center gap-x-4">
+                <div class="relative flex justify-start">
+                  <h2 class="font-headings font-medium whitespace-nowrap">
+                    {title}
+                  </h2>
+                </div>
+                <div aria-hidden="true" class="border-gray-5 w-full border-t" />
+                <span class="text-cnt-secondary font-mono text-sm">
+                  {date.replace(/-/g, ".")}
+                </span>
               </div>
-              <div
-                class="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2"
-              >
-                <img
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
-                  alt=""
-                  class="w-full max-lg:max-w-xs"
-                />
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
-    </NarrowWrapper>
-  </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </NarrowWrapper>
 </Layout>

@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "date-fns": "^4.1.0"
   },
   "devDependencies": {
     "@radix-ui/colors": "^3.0.0",

@@ -14,11 +14,15 @@ export default defineConfig({
         provider: fontProviders.google(),
         name: "Geist",
         cssVariable: "--geist-sans-font",
+        weights: ["100 900"],
+        display: "swap",
       },
       {
         provider: fontProviders.google(),
         name: "Geist Mono",
         cssVariable: "--geist-mono-font",
+        weights: ["100 900"],
+        display: "swap",
       },
       {
         provider: fontProviders.local(),
@@ -70,6 +74,23 @@ export default defineConfig({
               ],
               weight: 600,
               style: "normal",
+              display: "swap",
+            },
+          ],
+        },
+      },
+      {
+        provider: fontProviders.local(),
+        name: "Bluu Next",
+        cssVariable: "--bluu-next-font",
+        options: {
+          variants: [
+            {
+              src: [
+                "./src/assets/fonts/bluu-next/bluunext-bold.ttf",
+                "./src/assets/fonts/bluu-next/bluunext-bold-webfont.woff",
+                "./src/assets/fonts/bluu-next/bluunext-bold-webfont.woff2",
+              ],
               display: "swap",
             },
           ],
