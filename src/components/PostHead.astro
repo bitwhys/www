@@ -1,0 +1,14 @@
+---
+import BaseHead from "./BaseHead.astro"
+import LinkCard from "./LinkCard.astro"
+
+interface Props {
+  title: string
+}
+const { title } = Astro.props
+---
+
+<Fragment>
+  <BaseHead title={title} />
+  <LinkCard />
+</Fragment>

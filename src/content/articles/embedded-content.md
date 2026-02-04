@@ -32,6 +32,9 @@ the table of contents positioning may be inaccurate.
 
 ::link{url="https://pitchfork.com/reviews/albums/ichiko-aoba-luminescent-creatures/"}
 
+## Another Link Card
+::link{url="https://substack.com/home/post/p-184955320"}
+
 ```
 🟡
 

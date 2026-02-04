@@ -24,6 +24,7 @@
   /* backgrounds */
   --color-page: var(--page-background);
   --color-surface: var(--bg-surface);
+  --color-surface-hover: var(--bg-surface-hover);
 
   /* borders */
   --color-brd-line: var(--olive-5);
@@ -100,6 +101,7 @@
   :root {
     --page-background: var(--olive-2);
     --bg-surface: var(--white-a12);
+    --bg-surface-hover: var(--olive-a2);
   }
   :root ::selection {
     background-color: var(--lime-a5);
@@ -108,6 +110,7 @@
   .dark {
     --page-background: var(--olive-1);
     --bg-surface: var(--olive-a2);
+    --bg-surface-hover: var(--olive-a3);
   }
   *,
   *::before,
