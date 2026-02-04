@@ -1,0 +1,100 @@
+---
+title: From Server-side Rendering to Static Generation
+pubDate: 2026-02-03
+summary: Lorem ipsum
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit hoc ultimum bonorum, quod nunc a me defenditur; [Vitae autem degendae](https://nextjs.org/) ratio maxime quidem illis placuit quieta. Duo Reges: constructio interrete. Nam quid possumus facere melius?
+
+This is a button block
+
+Left aligned paragraph. **Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid dubitas igitur mutare principia naturae?** Ita multo sanguine profuso in laetitia et in victoria est mortuus. Omnia contraria, quos etiam insanos esse vultis. ~~Hinc ceteri particulas arripere conati suam quisque videro voluit afferre sententiam.~~ Quis non odit sordidos, vanos, leves, futtiles? Quasi ego id curem, quid ille aiat aut neget.
+
+Center aligned parapgrah. Duo enim genera quae erant, fecit tria. Et quidem illud ipsum non nimium probo et tantum patior, philosophum loqui de cupiditatibus finiendis. Facillimum id quidem est, inquam. _Quamquam ab iis philosophiam et omnes ingenuas disciplinas habemus; An me, inquis, tam amentem putas, ut apud imperitos isto modo loquar?_ At enim hic etiam dolore. Gloriosa ostentatio in constituendo summo bono. Quis enim potest ea, quae probabilia videantur ei, non probare?
+
+Right aligned paragraph. Si verbum sequimur, primum longius verbum praepositum quam bonum. Sed ad haec, nisi molestum est, habeo quae velim. Quare, quoniam de primis naturae commodis satis dietum est nunc de maioribus consequentibusque videamus. Quae contraria sunt his, malane?
+
+1. Numbered list item 1
+2. Numbered list item 2
+3. Numbered list item 3
+    1. Indented numbered list item 4
+        1. Super duper indented numbered list item 5
+
+## Heading h2
+
+Equidem soleo etiam quod uno Graeci, si aliter non possum, idem pluribus verbis exponere. Bonum incolumis acies: misera caecitas. Duo Reges: constructio interrete. Nam si beatus umquam fuisset, beatam vitam usque ad illum a Cyro extructum rogum pertulisset. Quid Zeno? Unum nescio, quo modo possit, si luxuriosus sit, finitas cupiditates habere.
+
+```
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+export default class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+```
+
+Non semper, inquam; Quis istud possit, inquit, negare? Ut id aliis narrare gestiant? Eam si varietatem diceres, intellegerem, ut etiam non dicente te intellego; Num igitur dubium est, quin, si in re ipsa nihil peccatur a superioribus, verbis illi commodius utantur? Quod autem principium officii quaerunt, melius quam Pyrrho; Egone quaeris, inquit, quid sentiam? Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Qui ita affectus, beatum esse numquam probabis;
+
+Si verbum sequimur, primum longius verbum praepositum quam bonum. Sed ad haec, nisi molestum est, habeo quae velim. Quare, quoniam de primis naturae commodis satis dietum est nunc de maioribus consequentibusque videamus. Quae contraria sunt his, malane?
+
+Deque his rebus satis multa in nostris de re publica libris sunt dicta a Laelio. Quarum ambarum rerum cum medicinam pollicetur, luxuriae licentiam pollicetur. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant.
+
+> Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.
+> 
+> -Steve Jobs
+
+Quis tibi ergo istud dabit praeter Pyrrhonem, Aristonem eorumve similes, quos tu non probas? Uterque enim summo bono fruitur, id est voluptate. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Quod dicit Epicurus etiam de voluptate, quae minime sint voluptates, eas obscurari saepe et obrui.
+
+```txt
+Quis tibi ergo istud dabit praeter Pyrrhonem, Aristonem eorumve similes, quos tu non probas? Uterque enim summo bono fruitur, id est voluptate. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Quod dicit Epicurus etiam de voluptate, quae minime sint voluptates, eas obscurari saepe et obrui.
+- Lorem ipsum
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia voluptatem hanc esse sentiunt omnes, quam sensus accipiens movetur et iucunditate quadam perfunditur. Quid est igitur, cur ita semper deum appellet Epicurus beatum et aeternum? Duo Reges: constructio interrete. Sint modo partes vitae beatae. Egone quaeris, inquit, quid sentiam?Example audio
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin laboramus, quis est, qui alienae modum statuat industriae? Mihi enim satis est, ipsis non satis. Summum a vobis bonum voluptas dicitur. Te ipsum, dignissimum maioribus tuis, voluptasne induxit, ut adolescentulus eriperes P. Quid, si etiam iucunda memoria est praeteritorum malorum? Qui autem de summo bono dissentit de tota philosophiae ratione dissentit.Example video
+
+Nam, ut sint illa vendibiliora, haec uberiora certe sunt. Simus igitur contenti his. Haec para/doca illi, nos admirabilia dicamus. Quae cum magnifice primo dici viderentur, considerata minus probabantur. Duae sunt enim res quoque, ne tu verba solum putes. Summum a vobis bonum voluptas dicitur.
+
+In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Non autem hoc: igitur ne illud quidem. Quid de Platone aut de Democrito loquar? Quid dubitas igitur mutare principia naturae? His singulis copiose responderi solet, sed quae perspicua sunt longa esse non debent. Qua igitur re ab deo vincitur, si aeternitate non vincitur? Certe, nisi voluptatem tanti aestimaretis.
+
+A standard full-width cover block
+
+Duo Reges: constructio interrete. Ita multo sanguine profuso in laetitia et in victoria est mortuus. Semovenda est igitur voluptas, non solum ut recta sequamini, sed etiam ut loqui deceat frugaliter. Ergo illi intellegunt quid Epicurus dicat, ego non intellego? Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Quo tandem modo? Quamquam id quidem licebit iis existimare, qui legerint. Nec vero sum nescius esse utilitatem in historia, non modo voluptatem. Quod autem satis est, eo quicquid accessit, nimium est;
+
+![](https://nextjs.wpengine.com/wp-content/uploads/2020/05/gyorgy-bakos-yB3uwXmokcg-unsplash-1024x683.jpg)
+
+**Two column block**
+
+Quid dubitas igitur mutare principia naturae? His singulis copiose responderi solet, sed quae perspicua sunt longa esse non debent.
+
+Restincta enim sitis stabilitatem voluptatis habet, inquit, illa autem voluptas ipsius restinctionis in motu est. Ita ne hoc quidem modo paria peccata sunt. Sit hoc ultimum bonorum, quod nunc a me defenditur; Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis;
+
+### Another heading h3
+
+https://www.youtube.com/embed/13eDfrMgFQM?feature=oembedYouTube embed
+
+Nam et a te perfici istam disputationem volo, nec tua mihi oratio longa videri potest. Primum quid tu dicis breve? Sed emolumenta communia esse dicuntur, recte autem facta et peccata non habentur communia. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Atque hoc loco similitudines eas, quibus illi uti solent, dissimillimas proferebas. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Bonum incolumis acies: misera caecitas. Sed eum qui audiebant, quoad poterant, defendebant sententiam suam.
+
+![](http://54.174.101.229/wp-content/uploads/2022/06/claudio-schwarz-ZuT6efbmt8U-unsplash-1024x683.jpg)
+
+![Wide Image](./ayumi-kubo-CySSsICArjc-unsplash.jpg)
+
+Ipse Epicurus fortasse redderet, ut Sextus Peducaeus, Sex. Equidem e Cn. Negat esse eam, inquit, propter se expetendam. Si longus, levis. Quid est igitur, inquit, quod requiras? Quo plebiscito decreta a senatu est consuli quaestio Cn. Quis tibi ergo istud dabit praeter Pyrrhonem, Aristonem eorumve similes, quos tu non probas? Nos quidem Virtutes sic natae sumus, ut tibi serviremus, aliud negotii nihil habemus.
+
+Illa argumenta propria videamus, cur omnia sint paria peccata. Nihil opus est exemplis hoc facere longius. Atqui iste locus est, Piso, tibi etiam atque etiam confirmandus, inquam; Quid ei reliquisti, nisi te, quoquo modo loqueretur, intellegere, quid diceret? Hanc in motu voluptatem -sic enim has suaves et quasi dulces voluptates appellat-interdum ita extenuat, ut M. Suo genere perveniant ad extremum;
+
+https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F56005581&show_artwork=true&maxwidth=580&maxheight=870&dnt=1SoundCloud Embed
+
+#### Yet Another Heading h4
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quod si ita est, sequitur id ipsum, quod te velle video, omnes semper beatos esse sapientes. Indicant pueri, in quibus ut in speculis natura cernitur. Expectoque quid ad id, quod quaerebam, respondeas. Nec tamen ullo modo summum pecudis bonum et hominis idem mihi videri potest. Duo Reges: constructio interrete. ALIO MODO. Cui Tubuli nomen odio non est? Aut haec tibi, Torquate, sunt vituperanda aut patrocinium voluptatis repudiandum.
