@@ -12,7 +12,10 @@
     "astro": "^5.17.1"
   },
   "devDependencies": {
+    "@radix-ui/colors": "^3.0.0",
+    "@tailwindcss/vite": "^4.1.18",
     "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.1.18"
   }
 }

@@ -1,0 +1,43 @@
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/white-alpha.css";
+@import "./olive.css";
+@import "./lime.css";
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--geist-sans-font);
+  --font-mono: var(--geist-mono-font);
+  --font-display: var(--visby-font);
+
+  /* content (text, icons) */
+  --color-cnt-primary: var(--olive-12);
+  --color-cnt-secondary: var(--olive-11);
+  --color-cnt-supportive: var(--olive-9);
+
+  /* backgrounds */
+  --color-page: var(--page-background);
+  --color-surface: var(--bg-surface);
+
+  /* borders */
+  --color-brd-line: var(--olive-5);
+  --color-brd-control: var(--olive-7);
+}
+
+@layer base {
+  :root {
+    --page-background: var(--olive-2);
+    --bg-surface: var(--white-a12);
+  }
+  .dark {
+    --page-background: var(--olive-1);
+    --bg-surface: var(--olive-a3);
+  }
+  *,
+  *::before,
+  *::after {
+    @apply border-brd-line;
+  }
+}

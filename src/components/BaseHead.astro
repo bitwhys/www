@@ -1,0 +1,103 @@
+---
+import "../assets/css/global.css"
+import { Font } from "astro:assets"
+import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from "../consts" // Assumes you have a constants file
+
+interface Props {
+  title: string
+  description?: string
+  image?: string
+  article?: boolean // Toggles between 'website' and 'article'
+  publishDate?: Date
+  author?: string // Defaults to 'bitwhys' if not provided
+}
+
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  image = DEFAULT_OG_IMAGE, // Your default "Proof of Work" brand image
+  article = false,
+  publishDate,
+  author = "bitwhys",
+} = Astro.props
+
+// 1. Construct the Canonical URL
+// This is critical for the POSSE model. It tells Google: "This is the original."
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+// 2. Construct the Image URL
+// Ensures the image path is absolute (required by LinkedIn/Twitter/Slack)
+const resolvedImage = new URL(image, Astro.site)
+
+// 3. Format the Title
+// Common pattern: "Post Title | Blog Name"
+const resolvedTitle = `${title} | ${SITE_TITLE}`
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="canonical" href={canonicalURL} />
+
+<title>{resolvedTitle}</title>
+<meta name="title" content={resolvedTitle} />
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+
+<!--  Open Graph/ Facebook  -->
+<meta property="og:type" content={article ? "article" : "website"} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={resolvedTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={resolvedImage} />
+{
+  article && publishDate && (
+    <meta
+      property="article:published_time"
+      content={publishDate.toISOString()}
+    />
+  )
+}
+
+<!-- Twitter/X  -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={resolvedTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={resolvedImage} />
+<meta property="twitter:creator" content="@bitwhys" />
+
+<!-- Font preloads -->
+<Font cssVariable="--geist-sans-font" preload />
+<Font cssVariable="--geist-mono-font" preload />
+<Font cssVariable="--visby-font" preload />
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": article ? "BlogPosting" : "WebSite",
+    headline: title,
+    image: resolvedImage,
+    datePublished: publishDate ? publishDate.toISOString() : undefined,
+    author: {
+      "@type": "Person",
+      name: author,
+      url: "https://bitwhys.dev", // Replace with your actual domain
+    },
+    description: description,
+  })}
+/>
+
+<script is:inline>
+  document.documentElement.classList.toggle(
+    "dark",
+    localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches),
+  )
+</script>
