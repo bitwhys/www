@@ -66,6 +66,13 @@
           ?.getAttribute("content") ||
         ""
 
+      // FIXME: ONLY FOR DEVELOPMENT TO TEST IMAGE GENERATION
+      if (image) {
+        console.log("Fetched image:", image)
+      } else {
+        console.log("No image found for URL:", url)
+      }
+
       const imageAlt =
         doc
           .querySelector('meta[property="og:image:alt"]')
@@ -231,7 +238,7 @@
     display: flex;
     flex-direction: column;
     border: 0.5px solid var(--color-brd-control);
-    border-radius: 8px;
+    border-radius: var(--radius-xl);
     overflow: hidden;
     text-decoration: none;
     color: inherit;
@@ -278,7 +285,7 @@
     position: relative;
     margin: 0;
     padding: 0;
-    border-radius: 6px;
+    border-radius: var(--radius-lg);
   }
 
   /* Modern browsers with aspect-ratio support */

@@ -35,6 +35,9 @@ the table of contents positioning may be inaccurate.
 ## Another Link Card
 ::link{url="https://substack.com/home/post/p-184955320"}
 
+## One Final Link Card
+::link{url="https://beyond.addy.ie/2026-trends/"}
+
 ```
 🟡
 
