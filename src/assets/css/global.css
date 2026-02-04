@@ -5,6 +5,9 @@
 
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+@config "../../typography.ts";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -25,6 +28,61 @@
   /* borders */
   --color-brd-line: var(--olive-5);
   --color-brd-control: var(--olive-7);
+}
+
+/* Theme Color Palette */
+@theme {
+  --color-gray-1: var(--olive-1);
+  --color-gray-2: var(--olive-2);
+  --color-gray-3: var(--olive-3);
+  --color-gray-4: var(--olive-4);
+  --color-gray-5: var(--olive-5);
+  --color-gray-6: var(--olive-6);
+  --color-gray-7: var(--olive-7);
+  --color-gray-8: var(--olive-8);
+  --color-gray-9: var(--olive-9);
+  --color-gray-10: var(--olive-10);
+  --color-gray-11: var(--olive-11);
+  --color-gray-12: var(--olive-12);
+
+  --color-gray-a1: var(--olive-a1);
+  --color-gray-a2: var(--olive-a2);
+  --color-gray-a3: var(--olive-a3);
+  --color-gray-a4: var(--olive-a4);
+  --color-gray-a5: var(--olive-a5);
+  --color-gray-a6: var(--olive-a6);
+  --color-gray-a7: var(--olive-a7);
+  --color-gray-a8: var(--olive-a8);
+  --color-gray-a9: var(--olive-a9);
+  --color-gray-a10: var(--olive-a10);
+  --color-gray-a11: var(--olive-a11);
+  --color-gray-a12: var(--olive-a12);
+
+  --color-brand-1: var(--lime-1);
+  --color-brand-2: var(--lime-2);
+  --color-brand-3: var(--lime-3);
+  --color-brand-4: var(--lime-4);
+  --color-brand-5: var(--lime-5);
+  --color-brand-6: var(--lime-6);
+  --color-brand-7: var(--lime-7);
+  --color-brand-8: var(--lime-8);
+  --color-brand-9: var(--lime-9);
+  --color-brand-10: var(--lime-10);
+  --color-brand-11: var(--lime-11);
+  --color-brand-12: var(--lime-12);
+
+  --color-brand-a1: var(--lime-a1);
+  --color-brand-a2: var(--lime-a2);
+  --color-brand-a3: var(--lime-a3);
+  --color-brand-a4: var(--lime-a4);
+  --color-brand-a5: var(--lime-a5);
+  --color-brand-a6: var(--lime-a6);
+  --color-brand-a7: var(--lime-a7);
+  --color-brand-a8: var(--lime-a8);
+  --color-brand-a9: var(--lime-a9);
+  --color-brand-a10: var(--lime-a10);
+  --color-brand-a11: var(--lime-a11);
+  --color-brand-a12: var(--lime-a12);
 }
 
 @layer utilities {

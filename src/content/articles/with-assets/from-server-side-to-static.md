@@ -2,6 +2,7 @@
 title: From Server-side Rendering to Static Generation
 pubDate: 2026-02-03
 summary: Lorem ipsum
+slug: from-server-side-to-static
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit hoc ultimum bonorum, quod nunc a me defenditur; [Vitae autem degendae](https://nextjs.org/) ratio maxime quidem illis placuit quieta. Duo Reges: constructio interrete. Nam quid possumus facere melius?
