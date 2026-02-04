@@ -14,7 +14,7 @@ import netlify from "@astrojs/netlify"
 
 // https://astro.build/config
 export default defineConfig({
-  adaptor: netlify(),
+  adapter: netlify(),
   site: "https://bitwhys.io",
 
   image: {
