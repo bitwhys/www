@@ -138,6 +138,9 @@ export default {
           ":is(h2, h3) code": {
             fontWeight: theme("fontWeight.bold"),
           },
+          del: {
+            color: theme("colors.cnt.supportive"),
+          },
 
           // Quotes
           blockquote: {
