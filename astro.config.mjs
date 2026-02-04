@@ -130,6 +130,8 @@ export default defineConfig({
           terminalTitlebarBackground: "var(--color-gray-6)",
           terminalTitlebarDotsForeground: "var(--color-gray-9)",
           terminalTitlebarDotsOpacity: "1",
+          tooltipSuccessBackground: "var(--color-brand-9)",
+          tooltipSuccessForeground: "var(--lime-contrast)",
         },
         borderRadius: "var(--radius-xl)",
       },
