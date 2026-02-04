@@ -72,6 +72,18 @@ const Button = ({ text, onClick }) => {
 }
 ```
 
+```zsh
+# Create a new post (use _title for drafts)
+pnpm new <title>
+```
+
+```zsh
+# Update the theme to the latest version
+pnpm update-theme 
+```
+
+
+
 ## Other Elements — sub, sup, abbr, kbd, mark
 
 H<sub>2</sub>O

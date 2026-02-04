@@ -116,12 +116,20 @@ export default defineConfig({
       themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
       styleOverrides: {
         borderColor: ["var(--white-a3)", "var(--color-brd-control)"],
+        codeFontFamily: "var(--fonts-mono)",
         frames: {
           editorBackground: ["var(--color-gray-a2)", "var(--white-a12)"],
           shadowColor: ["var(--black-a11)", "var(--black-a2)"],
-          editorTabBarBackground: ["", "var(--color-gray-6)"],
-          editorActiveTabBackground: ["", "var(--color-gray-3)"],
-          editorActiveTabIndicatorBottomColor: ["", "var(--color-brand-8)"],
+          editorTabBarBackground: "var(--color-gray-6)",
+          editorActiveTabBackground: "var(--color-gray-3)",
+          editorActiveTabIndicatorBottomColor: [
+            "var(--color-brand-9)",
+            "var(--color-brand-8)",
+          ],
+          terminalBackground: ["var(--color-gray-a2)", "var(--white-a12)"],
+          terminalTitlebarBackground: "var(--color-gray-6)",
+          terminalTitlebarDotsForeground: "var(--color-gray-9)",
+          terminalTitlebarDotsOpacity: "1",
         },
         borderRadius: "var(--radius-xl)",
       },
