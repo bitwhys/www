@@ -130,11 +130,11 @@ export default defineConfig({
       useDarkModeMediaQuery: false,
       themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
       styleOverrides: {
-        borderColor: ["var(--white-a3)", "var(--color-brd-control)"],
+        borderColor: ["var(--white-a3)", "var(--color-brd-line)"],
         codeFontFamily: "var(--fonts-mono)",
         frames: {
           editorBackground: ["var(--color-gray-a2)", "var(--white-a12)"],
-          shadowColor: ["var(--black-a11)", "var(--black-a2)"],
+          shadowColor: ["var(--black-a11)", "var(--color-gray-3)"],
           editorTabBarBackground: "var(--color-gray-6)",
           editorActiveTabBackground: "var(--color-gray-3)",
           editorActiveTabIndicatorBottomColor: [
