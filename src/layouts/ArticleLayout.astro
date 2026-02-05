@@ -1,0 +1,53 @@
+---
+// ArticleLayout.astro
+import type { HTMLAttributes } from "astro/types"
+
+interface Props extends HTMLAttributes<"div"> {
+  showToc?: boolean
+  showSidebar?: boolean
+}
+
+const {
+  showToc = false,
+  showSidebar = false,
+  class: className,
+  ...props
+} = Astro.props
+---
+
+<div class:list={["w-full min-h-screen", className]} {...props}>
+  <div
+    class="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-12 px-4 sm:px-6 lg:px-8"
+  >
+    {
+      showToc && (
+        <aside class="hidden lg:block lg:col-span-3 lg:col-start-1">
+          <div class="sticky top-8">
+            <slot name="toc" />
+          </div>
+        </aside>
+      )
+    }
+
+    <div
+      class:list={[
+        "col-span-1", // Mobile: full width
+        "lg:col-span-6", // Desktop: middle 50% width
+        "lg:col-start-4", // Desktop: Always start at col 4 to maintain center
+        "prose prose-lg prose-slate mx-auto lg:mx-0", // Typography styling
+      ]}
+    >
+      <slot name="article" />
+    </div>
+
+    {
+      showSidebar && (
+        <aside class="hidden xl:block xl:col-span-3 xl:col-start-10">
+          <div class="sticky top-8">
+            <slot name="sidebar" />
+          </div>
+        </aside>
+      )
+    }
+  </div>
+</div>

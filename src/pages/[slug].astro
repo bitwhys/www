@@ -5,6 +5,7 @@ import NarrowWrapper from "../layouts/NarrowWrapper.astro"
 import BaseHead from "../components/BaseHead.astro"
 import { postAgeFromPubDate } from "../utils/formatters"
 import LinkCard from "../components/LinkCard.astro"
+import ArticleLayout from "../layouts/ArticleLayout.astro"
 
 export async function getStaticPaths() {
   // TODO
@@ -21,8 +22,8 @@ const { Content, headings } = await render(article!)
 
 <Layout>
   <BaseHead slot="head" title={article?.data.title!} />
-  <NarrowWrapper>
-    <div class="pt-24 text-base">
+  <ArticleLayout>
+    <div slot="article" class="pt-24 text-base">
       <header class="space-y-2">
         <div
           class="text-center uppercase text-sm text-cnt-supportive font-mono font-medium"
@@ -39,6 +40,6 @@ const { Content, headings } = await render(article!)
         <Content />
       </article>
     </div>
-  </NarrowWrapper>
+  </ArticleLayout>
   <LinkCard />
 </Layout>
